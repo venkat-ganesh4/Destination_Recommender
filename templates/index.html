@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESTIMATE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='img/logo1.jpg') }}" alt="Travel Recommendation Logo" style="width: 100px;">
+        <h1>DESTIMATE</h1>
+        <div class="button-container">
+            <div class="dropdown" id="popular-dropdown">
+                <button class="dropbtn">Popular</button>
+                <div class="dropdown-content" id="popular-content">
+                    <a href="#">Statue of Equality</a>
+                    <a href="#">Charminar</a>
+                    <a href="#">Golconda Fort</a>
+                    <a href="#">Ramoji Film City</a>
+                </div>
+            </div>
+            <button onclick="showModal('contact-us-modal')">Contact Us</button>
+            <button onclick="showModal('about-us-modal')">About Us</button>
+        </div>
+    </header>
+    
+    <div class="content-wrapper">
+        <div class="content">
+            <h1>Destination Recommender</h1>
+            <form id="recommendationForm">
+                <label for="theme">Theme:</label>
+                <select id="theme">
+                    <option value="Nature & Adventure">Nature & Adventure</option>
+                    <option value="Art & Culture">Art & Culture</option>
+                    <option value="Religion & Spirituality">Religion & Spirituality</option>
+                    <option value="History & Heritage">History & Heritage</option>
+                    <option value="Relaxation & Wellness">Relaxation & Wellness</option>
+                </select><br><br>
+
+                <label for="budget">Budget:</label>
+                <select id="budget">
+                    <option value="Budget-friendly">Budget-friendly</option>
+                    <option value="Mid-range">Mid-range</option>
+                    <option value="Upscale">Upscale</option>
+                </select><br><br>
+
+                <label for="travel_companions">Travel Companions:</label>
+                <select id="travel_companions">
+                    <option value="Family">Family</option>
+                    <option value="Friends">Friends</option>
+                    <option value="Couple">Couple</option>
+                    <option value="Solo">Solo</option>
+                </select><br><br>
+
+                <button type="submit">Get Recommendations</button>
+            </form>
+
+            <h2>Recommended Destinations:</h2>
+            <div id="recommendations" class="image-container"></div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Discover your next adventure with DESTIMATE</p>
+    </footer>
+
+    <!-- Modals -->
+    <div id="contact-us-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contact-us-modal')">&times;</span>
+            <h2>Contact Us</h2>
+            <p>For inquiries, please email us at: venkatganeshnettem@gmail.com</p>
+        </div>
+    </div>
+    <div id="about-us-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('about-us-modal')">&times;</span>
+            <h2>About Us</h2>
+            <p>- Rishitha: Team Leader, Backend Developer, Algorithm Developer</p>
+            <p>- Venkat Ganesh: Frontend Developer, UI/UX Design Specialist</p>
+            <p>- Anusha: Documentation Expert, Algorithm Enhancer</p>
+            <p>- Anurag: Research and Development Specialist</p>
+        </div>
+    </div>
+    
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> 
+</body>
+</html>
